@@ -1,0 +1,46 @@
+<mvc:View
+  controllerName="com.client.itrequestmanager.controller.MyRequests"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <Page title="{i18n>myRequestsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <VBox class="sapUiSmallMargin" width="100%">
+
+        <SearchField
+          width="100%"
+          placeholder="{i18n>searchPlaceholder}"
+          liveChange=".onSearch"/>
+
+        <Table
+          id="requestsTable"
+          items="{requestsModel>/requests}"
+          class="sapUiSmallMarginTop"
+          growing="true"
+          growingScrollToLoad="true">
+
+          <columns>
+            <Column><Text text="{i18n>colId}"/></Column>
+            <Column><Text text="{i18n>colCategory}"/></Column>
+            <Column><Text text="{i18n>colPriority}"/></Column>
+            <Column><Text text="{i18n>colStatus}"/></Column>
+            <Column><Text text="{i18n>colCreatedOn}"/></Column>
+          </columns>
+
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{requestsModel>id}"/>
+                <Text text="{requestsModel>category}"/>
+                <Text text="{requestsModel>priority}"/>
+                <ObjectStatus text="{requestsModel>status}"/>
+                <Text text="{requestsModel>createdOn}"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

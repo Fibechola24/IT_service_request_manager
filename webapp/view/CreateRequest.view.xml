@@ -1,0 +1,48 @@
+<mvc:View
+  controllerName="com.client.itrequestmanager.controller.CreateRequest"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <Page title="{i18n>createPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <VBox class="sapUiSmallMargin" width="100%">
+
+        <SimpleForm editable="true" layout="ResponsiveGridLayout" title="{i18n>createFormTitle}">
+          <Label text="{i18n>labelCategory}" />
+          <Select id="categorySelect" selectedKey="">
+            <items>
+              <core:Item key="Access" text="{i18n>categoryAccess}"/>
+              <core:Item key="Hardware" text="{i18n>categoryHardware}"/>
+              <core:Item key="Software" text="{i18n>categorySoftware}"/>
+              <core:Item key="Network" text="{i18n>categoryNetwork}"/>
+            </items>
+          </Select>
+
+          <Label text="{i18n>labelPriority}" />
+          <Select id="prioritySelect" selectedKey="">
+            <items>
+              <core:Item key="Low" text="{i18n>priorityLow}"/>
+              <core:Item key="Medium" text="{i18n>priorityMedium}"/>
+              <core:Item key="High" text="{i18n>priorityHigh}"/>
+              <core:Item key="Critical" text="{i18n>priorityCritical}"/>
+            </items>
+          </Select>
+
+          <Label text="{i18n>labelDescription}" />
+          <TextArea
+            id="descArea"
+            rows="5"
+            width="100%"
+            placeholder="{i18n>descriptionPlaceholder}"/>
+        </SimpleForm>
+
+        <HBox justifyContent="End" class="sapUiSmallMarginTop">
+          <Button text="{i18n>btnCancel}" type="Transparent" press=".onCancel"/>
+          <Button text="{i18n>btnSubmit}" type="Emphasized" press=".onSubmit" class="sapUiTinyMarginBegin"/>
+        </HBox>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>
