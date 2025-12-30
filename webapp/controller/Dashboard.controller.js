@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, MessageBox) {
   "use strict";
 
-  return Controller.extend("com.client.itrequestmanager.controller.Dashboard", {
+  return Controller.extend("com.client.itrequestmanager.itrequestmanager.controller.Dashboard", {
     onNavCreate: function () {
       this.getOwnerComponent().getRouter().navTo("create");
     },

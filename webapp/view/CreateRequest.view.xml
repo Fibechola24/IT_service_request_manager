@@ -1,5 +1,5 @@
 <mvc:View
-  controllerName="com.client.itrequestmanager.controller.CreateRequest"
+  controllerName="com.client.itrequestmanager.itrequestmanager.controller.CreateRequest"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:core="sap.ui.core">

@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (Controller, Filter, FilterOperator) {
   "use strict";
 
-  return Controller.extend("com.client.itrequestmanager.controller.MyRequests", {
+ return Controller.extend("com.client.itrequestmanager.itrequestmanager.controller.MyRequests", {
     onNavBack: function () {
       this.getOwnerComponent().getRouter().navTo("dashboard");
     },

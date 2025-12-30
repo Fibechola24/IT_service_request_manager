@@ -1,5 +1,5 @@
 <mvc:View
-  controllerName="com.client.itrequestmanager.controller.Dashboard"
+  controllerName="com.client.itrequestmanager.itrequestmanager.controller.Dashboard"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m">
 
