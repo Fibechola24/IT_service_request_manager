@@ -1,32 +1,48 @@
 sap.ui.define([
-  "sap/ui/core/mvc/Controller",
-  "sap/ui/model/Filter",
-  "sap/ui/model/FilterOperator"
-], function (Controller, Filter, FilterOperator) {
-  "use strict";
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function(Controller, Filter, FilterOperator) {
+    "use strict";
 
-  return Controller.extend("com.client.itrequestmanager.controller.MyRequests", {
-    onNavBack: function () {
-      this.getOwnerComponent().getRouter().navTo("dashboard");
-    },
+    return Controller.extend("com.client.itrequestmanager.itrequestmanager.controller.MyRequests", {
+        onInit: function() {
+            console.log("MyRequests controller initialized");
+        },
 
-    onSearch: function (oEvent) {
-      const sQuery = (oEvent.getParameter("newValue") || "").trim();
-      const oTable = this.byId("requestsTable");
-      const oBinding = oTable.getBinding("items");
+        onNavBack: function() {
+            this.getOwnerComponent().getRouter().navTo("RouteDashboard");
+        },
 
-      if (!sQuery) {
-        oBinding.filter([]);
-        return;
-      }
+        onSearch: function(oEvent) {
+            var sQuery = (oEvent.getParameter("newValue") || "").trim();
+            var oTable = this.byId("requestsTable");
+            var oBinding = oTable.getBinding("items");
 
-      const aFilters = [
-        new Filter("id", FilterOperator.Contains, sQuery),
-        new Filter("category", FilterOperator.Contains, sQuery),
-        new Filter("status", FilterOperator.Contains, sQuery)
-      ];
+            if (!sQuery) {
+                oBinding.filter([]);
+                return;
+            }
 
-      oBinding.filter([new Filter({ filters: aFilters, and: false })]);
-    }
-  });
+            var aFilters = [
+                new Filter("id", FilterOperator.Contains, sQuery),
+                new Filter("category", FilterOperator.Contains, sQuery),
+                new Filter("status", FilterOperator.Contains, sQuery),
+                new Filter("description", FilterOperator.Contains, sQuery)
+            ];
+
+            oBinding.filter([new Filter({ filters: aFilters, and: false })]);
+        },
+
+        formatStatusState: function(sStatus) {
+            if (sStatus === "Open") {
+                return "Warning";
+            } else if (sStatus === "In Progress") {
+                return "Information";
+            } else if (sStatus === "Closed") {
+                return "Success";
+            }
+            return "None";
+        }
+    });
 });

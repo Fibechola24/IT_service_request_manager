@@ -1,48 +1,51 @@
 <mvc:View
-  controllerName="com.client.itrequestmanager.controller.Dashboard"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m">
+    controllerName="com.client.itrequestmanager.itrequestmanager.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+    displayBlock="true">
 
-  <Page title="{i18n>dashboardTitle}">
-    <content>
-      <VBox class="sapUiSmallMargin" width="100%">
-        <Title text="{i18n>dashboardWelcome}" level="H2" />
-        <Text text="{i18n>dashboardIntro}" class="sapUiSmallMarginBottom"/>
+    <Page title="{i18n>dashboardTitle}">
+        <content>
+            <layout:VerticalLayout class="sapUiContentPadding" width="100%">
+                <Title text="{i18n>dashboardWelcome}" level="H2" />
+                <Text text="{i18n>dashboardIntro}" class="sapUiSmallMarginBottom"/>
 
-        <HBox wrap="Wrap" justifyContent="Center" class="sapUiSmallMarginTop">
+                <layout:HorizontalLayout allowWrapping="true" content="Center" class="sapUiSmallMarginTop">
+                    
+                    <GenericTile
+                        header="{i18n>tileCreateHeader}"
+                        subheader="{i18n>tileCreateSubheader}"
+                        press=".onNavCreate"
+                        class="sapUiTinyMargin">
+                        <TileContent>
+                            <NumericContent value="+" />
+                        </TileContent>
+                    </GenericTile>
 
-          <GenericTile
-            header="{i18n>tileCreateHeader}"
-            subheader="{i18n>tileCreateSubheader}"
-            press=".onNavCreate"
-            class="sapUiTinyMargin">
-            <TileContent>
-              <NumericContent value="+" />
-            </TileContent>
-          </GenericTile>
+                    <GenericTile
+                        header="{i18n>tileMyRequestsHeader}"
+                        subheader="{i18n>tileMyRequestsSubheader}"
+                        press=".onNavMyRequests"
+                        class="sapUiTinyMargin">
+                        <TileContent>
+                            <NumericContent value="List" />
+                        </TileContent>
+                    </GenericTile>
 
-          <GenericTile
-            header="{i18n>tileMyRequestsHeader}"
-            subheader="{i18n>tileMyRequestsSubheader}"
-            press=".onNavMyRequests"
-            class="sapUiTinyMargin">
-            <TileContent>
-              <NumericContent value="List" />
-            </TileContent>
-          </GenericTile>
+                    <GenericTile
+                        header="{i18n>tileHelpHeader}"
+                        subheader="{i18n>tileHelpSubheader}"
+                        press=".onHelp"
+                        class="sapUiTinyMargin">
+                        <TileContent>
+                            <NumericContent value="?" />
+                        </TileContent>
+                    </GenericTile>
 
-          <GenericTile
-            header="{i18n>tileHelpHeader}"
-            subheader="{i18n>tileHelpSubheader}"
-            press=".onHelp"
-            class="sapUiTinyMargin">
-            <TileContent>
-              <NumericContent value="?" />
-            </TileContent>
-          </GenericTile>
-
-        </HBox>
-      </VBox>
-    </content>
-  </Page>
+                </layout:HorizontalLayout>
+            </layout:VerticalLayout>
+        </content>
+    </Page>
 </mvc:View>

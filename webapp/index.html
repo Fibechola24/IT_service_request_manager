@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IT Service Request Manager</title>
     <style>
-        html, body, body > div, #container, #container-uiarea {
+        html, body, #content {
             height: 100%;
+            margin: 0;
+            padding: 0;
         }
     </style>
     <script
         id="sap-ui-bootstrap"
-        src="resources/sap-ui-core.js"
+        src="https://sdk.openui5.org/resources/sap-ui-core.js"
         data-sap-ui-theme="sap_horizon"
         data-sap-ui-resource-roots='{
             "com.client.itrequestmanager.itrequestmanager": "./"
@@ -21,15 +23,19 @@
         data-sap-ui-compat-version="edge"
         data-sap-ui-async="true"
         data-sap-ui-frame-options="trusted"
-    ></script>
+        data-sap-ui-xx-flexibilityServices="[]"
+        data-sap-ui-xx-component-preload="off"
+        data-sap-ui-debug="false">
+    </script>
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
     <div
         data-sap-ui-component
         data-name="com.client.itrequestmanager.itrequestmanager"
         data-id="container"
-        data-settings='{"id" : "com.client.itrequestmanager.itrequestmanager"}'
+        data-settings='{"id": "com.client.itrequestmanager.itrequestmanager"}'
         data-handle-validation="true"
-    ></div>
+        style="height: 100%;">
+    </div>
 </body>
 </html>
