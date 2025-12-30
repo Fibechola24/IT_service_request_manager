@@ -17,7 +17,7 @@ sap.ui.define([
     return `${yyyy}-${mm}-${dd}`;
   }
 
-  return Controller.extend("com.client.itrequestmanager.itrequestmanager.controller.CreateRequest", {
+  return Controller.extend("com.client.itrequestmanager.controller.CreateRequest", {
     onNavBack: function () {
       this.getOwnerComponent().getRouter().navTo("dashboard");
     },
